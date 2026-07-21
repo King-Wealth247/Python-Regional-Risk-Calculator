@@ -6,11 +6,16 @@
 # A Python based program designed to calculate the risk and safety of a regions upon user input.
 # Presently, the calculations are done based on regional crime indexes hardcore coded into the system.
 
+__name___ = "main"
 
+# Color codes
+GREEN = "\033[32m"
+YELLOW = "\033[33m"
+RED = "\033[31m"
+BLUE = "\033[34m"
+RESET = "\033[0m"   # Default terminal color
 
-
-def main():
-    regions = dict(        # Making use of a dictonary (Key=>value pairs). Could also use {}. data = {"Key" : "Value", "Key" : "Value"}
+regions = dict(        # Making use of a dictonary (Key=>value pairs). Could also use {}. data = {"Key" : "Value", "Key" : "Value"}
         far_north=67, 
         north=46, 
         adamawa=60, 
@@ -22,15 +27,8 @@ def main():
         south=33, 
         east=47
     )
-    
-    # Color codes
-    GREEN = "\033[32m"
-    YELLOW = "\033[33m"
-    RED = "\033[31m"
-    BLUE = "\033[34m"
-    RESET = "\033[0m"   # Default terminal color
 
-
+def main():
     # user input.
     li_location = []
     
@@ -50,43 +48,35 @@ def main():
     get_safety_status(li_location, regions)
 
 
-def get_safety_status(li_location: list[str], regions: list[str]) -> list[str]:
-    
-    # Color codes
-    GREEN = "\033[32m"
-    YELLOW = "\033[33m"
-    RED = "\033[31m"
-    BLUE = "\033[34m"
-    RESET = "\033[0m"   # Default terminal color
-    
+def get_safety_status(li_location: list[str], regions: list[str]) -> list[str]:    
     # Risk Calculation Logic
     #tp_result = ()    # Tuple where we'll store our results 
     li_result = []     # List where we'll store our results
 
     for location in li_location:  
         if regions[location] >= 70:
-            risk = "high"
+            risk = "unsafe"
             COLOR = RED
         elif regions[location] >= 40:
             risk = "moderate"
             COLOR = YELLOW
         else:
-            risk = "low"
+            risk = "safe"
             COLOR = GREEN
 
         #tp_result += ({"location" : location, "risk" : risk, "color" : COLOR}, ) # Concatenate dictionary containig results as a tuple to the result tuple
         li_result.append([location, risk, COLOR])
 
 
-    # Calculated Output
+    # Calculated Output. 
     for i in range(len(li_result)):
-        print(f"\nLocation: {li_result[i][0].replace("_", " ").title()} \nSecurity Risk: {li_result[i][2]}{li_result[i][1]}{RESET}\n")
+        print(f"\nLocation: {li_result[i][0].replace("_", " ").title()} \nSafety Status: {li_result[i][2]}{li_result[i][1]}{RESET}\n")
     # print(f"\nYour Destination: {location.replace("_", " ").title()} \nRisk Level: {COLOR}{risk.title()}{RESET}")
 
     return(li_result)
 
-if __name__ == "main":
-    main()
 
+if __name__ == "__main__":
+    main()
 
 
