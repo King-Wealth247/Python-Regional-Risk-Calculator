@@ -6,6 +6,8 @@
 # A Python based program designed to calculate the risk and safety of a regions upon user input.
 # Presently, the calculations are done based on regional crime indexes hardcore coded into the system.
 
+from datetime import datetime
+
 __name___ = "main"
 
 # Color codes
@@ -34,6 +36,7 @@ regions = dict(        # Making use of a dictonary (Key=>value pairs). Could als
 def main(): 
     get_regions()  # Get the regions from the locations.txt file
     get_safety_status(li_input_regions, regions)  # Calculate the risk and safety of the regions in the locations.txt file
+    log_safety_status()  # Log the risk and safety of the regions in the locations.txt file to a log file
 
 def get_regions():
     try:
@@ -80,6 +83,15 @@ def get_safety_status(li_location: list[str], regions: dict[str, int]) -> list[s
 
     return(li_result)
 
+def log_safety_status():
+    try:
+        with open("safety_log.txt", "a") as log_file:
+            for i in range(len(li_input_regions)):
+                log_file.write(f"Region: {li_input_regions[i].replace('_', ' ').title()} | Risk Index: {regions[li_input_regions[i]]} | Timestamp: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
+
+    except FileNotFoundError:
+        with open("safety_log.txt", "w+") as log_file:
+            log_file.write(f"{"safety log".center(50, "-").title()}\n")
 
 if __name__ == "__main__":
     main()

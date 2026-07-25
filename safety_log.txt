@@ -1,0 +1,11 @@
+--------------------Safety Log--------------------
+Region: Far North | Risk Index: 67 | Timestamp: 2026-07-25 13:28:15
+Region: North | Risk Index: 46 | Timestamp: 2026-07-25 13:28:15
+Region: Adamawa | Risk Index: 60 | Timestamp: 2026-07-25 13:28:15
+Region: West | Risk Index: 12 | Timestamp: 2026-07-25 13:28:15
+Region: North West | Risk Index: 83 | Timestamp: 2026-07-25 13:28:15
+Region: South West | Risk Index: 71 | Timestamp: 2026-07-25 13:28:15
+Region: Littoral | Risk Index: 75 | Timestamp: 2026-07-25 13:28:15
+Region: Center | Risk Index: 77 | Timestamp: 2026-07-25 13:28:15
+Region: South | Risk Index: 33 | Timestamp: 2026-07-25 13:28:15
+Region: East | Risk Index: 27 | Timestamp: 2026-07-25 13:28:15
