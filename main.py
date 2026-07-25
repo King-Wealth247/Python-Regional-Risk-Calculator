@@ -15,40 +15,42 @@ RED = "\033[31m"
 BLUE = "\033[34m"
 RESET = "\033[0m"   # Default terminal color
 
+li_input_regions = []
+li_unfound_regions = []
+
 regions = dict(        # Making use of a dictonary (Key=>value pairs). Could also use {}. data = {"Key" : "Value", "Key" : "Value"}
         far_north=67, 
         north=46, 
         adamawa=60, 
-        west=69, 
+        west=12, 
         north_west=83, 
         south_west=71, 
         littoral=75, 
         center=77, 
         south=33, 
-        east=47
+        east=27
     )
 
-def main():
-    # user input.
-    li_location = []
-    
-    print("Enter 5 regions in Cameroon: \n")
-    
-    for i in range(1, 6):
-    
-        while True:
-            location = input(f"Enter the region number {BLUE} {i} {RESET} (It must be one of the 10 regions in Cameroon): ")
-            location=location.lower().replace(" ","_")      #clean texxt
-            if location in regions:
-                #print(location)
-                li_location.append(location)
-                break;
-            print(f"\n{RED}It seems the region you entered isn't one of the 10 in Cameroon!{RESET} Please, reENTER\n")
-    
-    get_safety_status(li_location, regions)
+def main(): 
+    get_regions()  # Get the regions from the locations.txt file
+    get_safety_status(li_input_regions, regions)  # Calculate the risk and safety of the regions in the locations.txt file
 
+def get_regions():
+    try:
+        input_regions = open("locations.txt", "r")
+        for line in input_regions:
+            line = line.lower().replace(" ", "_").strip()
+            if line in regions:
+                li_input_regions.append(line)
+            else:
+                li_unfound_regions.append(line)
+        input_regions.close()
 
-def get_safety_status(li_location: list[str], regions: list[str]) -> list[str]:    
+    except FileNotFoundError:
+        print(f"{RED} ERROR: The file locations.txt was not found!{RESET}")
+    
+
+def get_safety_status(li_location: list[str], regions: dict[str, int]) -> list[str]:    
     # Risk Calculation Logic
     #tp_result = ()    # Tuple where we'll store our results 
     li_result = []     # List where we'll store our results
@@ -57,9 +59,12 @@ def get_safety_status(li_location: list[str], regions: list[str]) -> list[str]:
         if regions[location] >= 70:
             risk = "unsafe"
             COLOR = RED
-        elif regions[location] >= 40:
+        elif regions[location] >= 50:
             risk = "moderate"
             COLOR = YELLOW
+        elif regions[location] >= 30:
+            risk = "fair"
+            COLOR = BLUE
         else:
             risk = "safe"
             COLOR = GREEN
@@ -78,5 +83,4 @@ def get_safety_status(li_location: list[str], regions: list[str]) -> list[str]:
 
 if __name__ == "__main__":
     main()
-
 
