@@ -9,3 +9,33 @@ Region: Littoral | Risk Index: 75 | Timestamp: 2026-07-25 13:28:15
 Region: Center | Risk Index: 77 | Timestamp: 2026-07-25 13:28:15
 Region: South | Risk Index: 33 | Timestamp: 2026-07-25 13:28:15
 Region: East | Risk Index: 27 | Timestamp: 2026-07-25 13:28:15
+Region: Far North | Risk Index: 67 | Timestamp: 2026-08-01 14:05:11
+Region: North | Risk Index: 46 | Timestamp: 2026-08-01 14:05:11
+Region: Adamawa | Risk Index: 60 | Timestamp: 2026-08-01 14:05:11
+Region: West | Risk Index: 12 | Timestamp: 2026-08-01 14:05:11
+Region: North West | Risk Index: 83 | Timestamp: 2026-08-01 14:05:11
+Region: South West | Risk Index: 71 | Timestamp: 2026-08-01 14:05:11
+Region: Littoral | Risk Index: 75 | Timestamp: 2026-08-01 14:05:11
+Region: Center | Risk Index: 77 | Timestamp: 2026-08-01 14:05:11
+Region: South | Risk Index: 33 | Timestamp: 2026-08-01 14:05:11
+Region: East | Risk Index: 27 | Timestamp: 2026-08-01 14:05:11
+Region: Far North | Risk Index: 67 | Timestamp: 2026-08-02 22:31:37
+Region: North | Risk Index: 46 | Timestamp: 2026-08-02 22:31:37
+Region: Adamawa | Risk Index: 60 | Timestamp: 2026-08-02 22:31:37
+Region: West | Risk Index: 12 | Timestamp: 2026-08-02 22:31:37
+Region: North West | Risk Index: 83 | Timestamp: 2026-08-02 22:31:37
+Region: South West | Risk Index: 71 | Timestamp: 2026-08-02 22:31:37
+Region: Littoral | Risk Index: 75 | Timestamp: 2026-08-02 22:31:37
+Region: Center | Risk Index: 77 | Timestamp: 2026-08-02 22:31:37
+Region: South | Risk Index: 33 | Timestamp: 2026-08-02 22:31:37
+Region: East | Risk Index: 27 | Timestamp: 2026-08-02 22:31:37
+Region: Far North | Risk Index: 67 | Timestamp: 2026-08-02 22:33:42
+Region: North | Risk Index: 46 | Timestamp: 2026-08-02 22:33:42
+Region: Adamawa | Risk Index: 60 | Timestamp: 2026-08-02 22:33:42
+Region: West | Risk Index: 12 | Timestamp: 2026-08-02 22:33:42
+Region: North West | Risk Index: 83 | Timestamp: 2026-08-02 22:33:42
+Region: South West | Risk Index: 71 | Timestamp: 2026-08-02 22:33:42
+Region: Littoral | Risk Index: 75 | Timestamp: 2026-08-02 22:33:42
+Region: Center | Risk Index: 77 | Timestamp: 2026-08-02 22:33:42
+Region: South | Risk Index: 33 | Timestamp: 2026-08-02 22:33:42
+Region: East | Risk Index: 27 | Timestamp: 2026-08-02 22:33:42
